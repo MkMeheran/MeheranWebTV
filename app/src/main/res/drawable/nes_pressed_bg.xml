@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Main Border -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/stone_900" />
+            <corners android:radius="8dp" />
+        </shape>
+    </item>
+    
+    <!-- Light Shadow (Bottom Right) -->
+    <item android:top="3dp" android:left="3dp" android:right="3dp" android:bottom="3dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/nes_shadow_light" />
+            <corners android:radius="5dp" />
+        </shape>
+    </item>
+
+    <!-- Dark Shadow (Top Left) -->
+    <item android:top="3dp" android:left="3dp" android:right="4dp" android:bottom="4dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/nes_shadow_dark" />
+            <corners android:radius="5dp" />
+        </shape>
+    </item>
+
+    <!-- Main Background -->
+    <item android:top="5dp" android:left="5dp" android:right="4dp" android:bottom="4dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/stone_200" />
+            <corners android:radius="3dp" />
+        </shape>
+    </item>
+</layer-list>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black">
+
+    <androidx.media3.ui.PlayerView
+        android:id="@+id/playerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:use_controller="false"
+        app:surface_type="surface_view" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminateTint="@color/amber_400"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Channel Info Overlay (Retro style) -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/overlayContainer"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/nes_raised_bg"
+        android:padding="16dp"
+        android:layout_margin="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/tvOverlayChannelNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CH 1"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:textColor="@color/amber_700"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tvOverlayChannelName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ATN Bangla"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/stone_900"
+            app:layout_constraintTop_toBottomOf="@id/tvOverlayChannelNo"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tvOverlayCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="ENTERTAINMENT"
+            android:background="@drawable/nes_pressed_bg"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="4dp"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:textColor="@color/stone_900"
+            app:layout_constraintTop_toBottomOf="@id/tvOverlayChannelName"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tvNumberInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CH: "
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:textColor="@color/amber_400"
+        android:background="@drawable/nes_pressed_bg"
+        android:padding="16dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="32dp" />
+
+    <!-- Error Overlay -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/errorOverlay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/nes_raised_bg"
+        android:padding="24dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        
+        <TextView
+            android:id="@+id/tvErrorMsg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Stream Error"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/red_500"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <Button
+            android:id="@+id/btnRetry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="RETRY"
+            android:background="@drawable/nes_card_selector"
+            android:textColor="@color/stone_900"
+            app:layout_constraintTop_toBottomOf="@id/tvErrorMsg"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btnBack" />
+
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="8dp"
+            android:text="BACK"
+            android:background="@drawable/nes_card_selector"
+            android:textColor="@color/stone_900"
+            app:layout_constraintTop_toBottomOf="@id/tvErrorMsg"
+            app:layout_constraintStart_toEndOf="@id/btnRetry"
+            app:layout_constraintEnd_toEndOf="parent" />
+            
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

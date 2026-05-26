@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.StreamTV" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@color/app_bg</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:navigationBarColor">@color/stone_900</item>
+        <item name="android:statusBarColor">@color/stone_900</item>
+    </style>
+</resources>
